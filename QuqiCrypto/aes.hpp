@@ -128,7 +128,7 @@ protected:
             {
                 return false;
             }
-            out.resize(mlen + flen);
+            out.resize(size_t(mlen + flen));
             return true;
         }
         else
@@ -156,7 +156,7 @@ protected:
             {
                 return false;
             }
-            out.resize(mlen + flen);
+            out.resize(size_t(mlen + flen));
             return true;
         }
     }
@@ -305,7 +305,7 @@ public:
         if (AESModeLimit[(int)AESMode::ECB_256] != key.size())
             return false;
 
-        return _encrypt(in, out, key, std::string(), EVP_aes_192_ecb(), enc);
+        return _encrypt(in, out, key, std::string(), EVP_aes_256_ecb(), enc);
     }
 };
 

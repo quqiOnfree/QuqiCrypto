@@ -7,62 +7,15 @@
 
 int main()
 {
-    qcrypto::AES<qcrypto::AESMode::CBC_256> aes;
+    auto get = qcrypto::pkey::KeyGenerator::generateRSA(2048);
+    qcrypto::pkey::PublicKey pubkey = get;
 
-    std::string out, out2;
-    aes.encrypt("你好", out, "11111111111111111111111111111111", "1111111111111111", true);
-    aes.encrypt(out, out2, "11111111111111111111111111111111", "1111111111111111", false);
-    std::cout << out << " " << out2 << '\n';
+    std::string data = "你好", out1, out2, signature;
 
-    /*qcrypto::Base64 base64;
-
-    std::string out, out2;
-    base64.encrypt("ajksfhfafjklsjkldabshjdgwhjkagvhjksgdhjgwavsgfhgwahusbvdhwa", out, true);
-    base64.encrypt(out, out2, false);
-    std::cout << out << " " << out2 << '\n';*/
-
-
-
-
-
-    /*EVP_PKEY* pkey = EVP_RSA_gen(2048);
-    EVP_PKEY* pk2 = EVP_PKEY_new();
-    EVP_PKEY_copy_parameters(pk2, pkey);
-
-    EVP_PKEY_CTX* ctx = EVP_PKEY_CTX_new(pk2, nullptr);
-
-    EVP_PKEY_encrypt_init(ctx);
-    unsigned char out[2048]{ 0 };
-    size_t len = 0;
-    EVP_PKEY_encrypt(ctx, out, &len, (unsigned char*)"你好", 6);
-
-    EVP_PKEY_decrypt_init(ctx);
-
-    EVP_PKEY_decrypt(ctx, out, &len, out, len);*/
-
-
-
-    /*EVP_PKEY* pkey = EVP_RSA_gen(2048);
-
-    auto bio = BIO_new(BIO_s_mem());
-    PEM_write_bio_PrivateKey(bio, pkey, nullptr, nullptr, 0, nullptr, nullptr);
-
-    char out[2048]{ 0 };
-    BIO_read(bio, out, 2048);
-    std::cout << out << '\n';
-
-    PEM_read_bio_PrivateKey(bio, &pkey, nullptr, nullptr);*/
-
-
-
-    //EVP_PKEY_free(pkey);
-
-    /*auto pk = qcrypto::pkey::PrivateKey::generateRSA(2048);
-    std::string data;
-
-    qcrypto::pkey::encrypt("你好", data, qcrypto::pkey::PublicKey(pk));
-    qcrypto::pkey::decrypt(data, data, pk);
-    std::cout << data;*/
+    qcrypto::pkey::encrypt(data, out1, pubkey);
+    qcrypto::pkey::signature(data, signature, get, qcrypto::MDMode::sha256);
+    qcrypto::pkey::decrypt(out1, out2, get);
+    qcrypto::pkey::verify(out2, signature, pubkey, qcrypto::MDMode::sha256);
 
     return 0;
 }
