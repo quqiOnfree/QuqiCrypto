@@ -1,14 +1,13 @@
-﻿#ifndef MD_HPP
-#define MD_HPP
-
-#define QUQICRYPTO_NAMESPACE_BEGIN namespace qcrypto {
-#define QUQICRYPTO_NAMESPACE_END }
+﻿#ifndef QUQICRYPTO_MD_HPP
+#define QUQICRYPTO_MD_HPP
 
 #include <memory>
 #include <stdexcept>
 
 #include <openssl/evp.h>
 #include <openssl/md5.h>
+
+#include "definition.hpp"
 
 QUQICRYPTO_NAMESPACE_BEGIN
 
@@ -76,4 +75,4 @@ private:
 
 QUQICRYPTO_NAMESPACE_END
 
-#endif // !MD_HPP
+#endif // !QUQICRYPTO_MD_HPP

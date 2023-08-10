@@ -38,5 +38,8 @@
     <ClInclude Include="QuqiCrypto\md.hpp">
       <Filter>头文件\QuqiCrypto</Filter>
     </ClInclude>
+    <ClInclude Include="QuqiCrypto\definition.hpp">
+      <Filter>头文件\QuqiCrypto</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

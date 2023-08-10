@@ -1,13 +1,12 @@
-﻿#ifndef BASE64_HPP
-#define BASE64_HPP
-
-#define QUQICRYPTO_NAMESPACE_BEGIN namespace qcrypto {
-#define QUQICRYPTO_NAMESPACE_END }
+﻿#ifndef QUQICRYPTO_BASE64_HPP
+#define QUQICRYPTO_BASE64_HPP
 
 #include <string>
 #include <memory>
 
 #include <openssl/evp.h>
+
+#include "definition.hpp"
 
 QUQICRYPTO_NAMESPACE_BEGIN
 
@@ -71,4 +70,4 @@ public:
 
 QUQICRYPTO_NAMESPACE_END
 
-#endif // !BASE64_HPP
+#endif // !QUQICRYPTO_BASE64_HPP

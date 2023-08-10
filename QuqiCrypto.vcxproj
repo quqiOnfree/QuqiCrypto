@@ -139,6 +139,7 @@
     <ClInclude Include="QuqiCrypto.hpp" />
     <ClInclude Include="QuqiCrypto\aes.hpp" />
     <ClInclude Include="QuqiCrypto\base64.hpp" />
+    <ClInclude Include="QuqiCrypto\definition.hpp" />
     <ClInclude Include="QuqiCrypto\md.hpp" />
     <ClInclude Include="QuqiCrypto\pkey.hpp" />
   </ItemGroup>

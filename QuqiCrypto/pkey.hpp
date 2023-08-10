@@ -1,10 +1,5 @@
-﻿#ifndef PKEY_HPP
-#define PKEY_HPP
-
-#define QUQICRYPTO_NAMESPACE_BEGIN namespace qcrypto {
-#define QUQICRYPTO_NAMESPACE_END }
-#define PKEY_NAMESPACE_BEGIN namespace pkey {
-#define PKEY_NAMESPACE_END }
+﻿#ifndef QUQICRYPTO_PKEY_HPP
+#define QUQICRYPTO_PKEY_HPP
 
 #include <string>
 #include <mutex>
@@ -17,6 +12,7 @@
 #include <openssl/bio.h>
 
 #include "md.hpp"
+#include "definition.hpp"
 
 QUQICRYPTO_NAMESPACE_BEGIN
 
@@ -398,4 +394,4 @@ public:
 
 QUQICRYPTO_NAMESPACE_END
 
-#endif // !PKEY_HPP
+#endif // !QUQICRYPTO_PKEY_HPP

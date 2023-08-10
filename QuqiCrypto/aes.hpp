@@ -1,14 +1,13 @@
-﻿#ifndef AES_HPP
-#define AES_HPP
-
-#define QUQICRYPTO_NAMESPACE_BEGIN namespace qcrypto {
-#define QUQICRYPTO_NAMESPACE_END }
+﻿#ifndef QUQICRYPTO_AES_HPP
+#define QUQICRYPTO_AES_HPP
 
 #include <string>
 #include <random>
 #include <mutex>
 
 #include <openssl/evp.h>
+
+#include "definition.hpp"
 
 QUQICRYPTO_NAMESPACE_BEGIN
 
@@ -311,4 +310,4 @@ public:
 
 QUQICRYPTO_NAMESPACE_END
 
-#endif // !AES_HPP
+#endif // !QUQICRYPTO_AES_HPP
